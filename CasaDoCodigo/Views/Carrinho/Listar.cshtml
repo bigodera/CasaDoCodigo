@@ -1,0 +1,27 @@
+﻿@model CasaDoCodigo.Models.Carrinho
+
+@{
+    ViewBag.Title = "Listar";
+    Layout="~/Views/Shared/_Layout.cshtml"; 
+}
+
+<h2>Seu carrinho de compras</h2>
+
+@if (Model == null)
+{
+    <div class="alert alert-info">
+        Nenhum livro no carrinho de
+        compras.
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <a class="btn btn-info btn-lg" href="/fj36-livraria/loja/index">
+            <span class="glyphicon glyphicon-book"></span> Continue comprando
+        </a>
+    </div>
+</div>
+
+

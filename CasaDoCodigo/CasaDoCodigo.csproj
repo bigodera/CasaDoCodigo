@@ -84,6 +84,26 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Imagens\excluir.png" />
+    <Content Include="Content\Imagens\gatinho.jpeg" />
+    <Content Include="Content\Imagens\large_arquitetura.jpg" />
+    <Content Include="Content\Imagens\large_logica.png" />
+    <Content Include="Content\Imagens\large_rest.png" />
+    <Content Include="Content\Imagens\large_soa.png" />
+    <Content Include="Content\Imagens\large_tdd.png" />
+    <Content Include="Content\Imagens\large_webmobile.png" />
+    <Content Include="Content\Imagens\medium_arquitetura.jpg" />
+    <Content Include="Content\Imagens\medium_logica.png" />
+    <Content Include="Content\Imagens\medium_rest.png" />
+    <Content Include="Content\Imagens\medium_soa.png" />
+    <Content Include="Content\Imagens\medium_tdd.png" />
+    <Content Include="Content\Imagens\medium_webmobile.png" />
+    <Content Include="Content\Imagens\small_arquitetura.jpg" />
+    <Content Include="Content\Imagens\small_logica.png" />
+    <Content Include="Content\Imagens\small_rest.png" />
+    <Content Include="Content\Imagens\small_soa.png" />
+    <Content Include="Content\Imagens\small_tdd.png" />
+    <Content Include="Content\Imagens\small_webmobile.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -102,13 +122,17 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Loja\Index.cshtml" />
+    <Content Include="Views\Carrinho\Listar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarrinhoController.cs" />
     <Compile Include="Controllers\LojaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Carrinho.cs" />
+    <Compile Include="Models\ItemCompra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

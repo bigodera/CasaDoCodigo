@@ -4,21 +4,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<div class="jumbotron">
+<div class="jumbotron">
     <h1>Livraria 36</h1>
     <p>Os melhores livros de tecnologia do Brasil!</p>
 </div>
 <div class="row">
-
-
     <div class="col-6 col-sm-6 col-lg-4">
         <h4>Introdução à Arquitetura e Design de Software</h4>
         <p>
-            <a href="/fj36-livraria/loja/livro?id=1" class="block clearfix">
-                <img src="/fj36-livraria/resources/imagens/medium_arquitetura.jpg" alt="Arquitetura Java" title="Arquitetura Java">
+            @*<a href="/fj36-livraria/loja/livro?id=1" class="block clearfix">*@
+            <a href="@Url.Action("livro", "loja", new { id = 1 })" class="block clearfix">
+                <img src="~/Content/Imagens/medium_arquitetura.jpg" alt="Arquitetura Java" title="Arquitetura Java">
             </a>
-        </p><p>
-            <a class="btn btn-default" href="/fj36-livraria/loja/livro?id=1">
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("livro", "loja", new { id = 1 })">
                 Saiba
                 mais »
             </a>
@@ -28,11 +28,12 @@
     <div class="col-6 col-sm-6 col-lg-4">
         <h4>SOA aplicado: Integrando com web services e além</h4>
         <p>
-            <a href="/fj36-livraria/loja/livro?id=2" class="block clearfix">
-                <img src="/fj36-livraria/resources/imagens/medium_soa.png" alt="SOA" title="SOA">
+            <a href="@Url.Action("livro", "loja", new { id = 2 })" class="block clearfix">
+                <img src="~/Content/Imagens/medium_soa.png" alt="SOA" title="SOA">
             </a>
-        </p><p>
-            <a class="btn btn-default" href="/fj36-livraria/loja/livro?id=2">
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("livro", "loja", new { id = 2 })">
                 Saiba
                 mais »
             </a>
@@ -42,11 +43,12 @@
     <div class="col-6 col-sm-6 col-lg-4">
         <h4>A Web Mobile: Programe para um mundo de muitos dispositivos</h4>
         <p>
-            <a href="/fj36-livraria/loja/livro?id=3" class="block clearfix">
-                <img src="/fj36-livraria/resources/imagens/medium_webmobile.png" alt="A Web Mobile" title="A Web Mobile">
+            <a href="@Url.Action("livro", "loja", new { id = 3 })" class="block clearfix">
+                <img src="~/Content/Imagens/medium_webmobile.png" alt="A Web Mobile" title="A Web Mobile">
             </a>
-        </p><p>
-            <a class="btn btn-default" href="/fj36-livraria/loja/livro?id=3">
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("livro", "loja", new { id = 3 })">
                 Saiba
                 mais »
             </a>
@@ -56,11 +58,12 @@
     <div class="col-6 col-sm-6 col-lg-4">
         <h4>REST: Construa API's inteligentes de maneira simples</h4>
         <p>
-            <a href="/fj36-livraria/loja/livro?id=4" class="block clearfix">
-                <img src="/fj36-livraria/resources/imagens/medium_rest.png" alt="REST" title="REST">
+            <a href="@Url.Action("livro", "loja", new { id = 4 })" class="block clearfix">
+                <img src="~/Content/Imagens/medium_rest.png" alt="REST" title="REST">
             </a>
-        </p><p>
-            <a class="btn btn-default" href="/fj36-livraria/loja/livro?id=4">
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("livro", "loja", new { id = 4 })">
                 Saiba
                 mais »
             </a>
@@ -70,11 +73,12 @@
     <div class="col-6 col-sm-6 col-lg-4">
         <h4>Test-Driven Development: Teste e Design no Mundo Real</h4>
         <p>
-            <a href="/fj36-livraria/loja/livro?id=5" class="block clearfix">
-                <img src="/fj36-livraria/resources/imagens/medium_tdd.png" alt="TDD" title="TDD">
+            <a href="@Url.Action("livro", "loja", new { id = 5 })" class="block clearfix">
+                <img src="~/Content/Imagens/medium_tdd.png" alt="TDD" title="TDD">
             </a>
-        </p><p>
-            <a class="btn btn-default" href="/fj36-livraria/loja/livro?id=5">
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("livro", "loja", new { id = 5 })">
                 Saiba
                 mais »
             </a>
@@ -84,17 +88,16 @@
     <div class="col-6 col-sm-6 col-lg-4">
         <h4>Lógica de Programação: Crie seus primeiros programas usando Javascript e HTML</h4>
         <p>
-            <a href="/fj36-livraria/loja/livro?id=6" class="block clearfix">
-                <img src="/fj36-livraria/resources/imagens/medium_logica.png" alt="Lógica" title="Lógica">
+            <a href="@Url.Action("livro", "loja", new { id = 6 })" class="block clearfix">
+                <img src="~/Content/Imagens/medium_logica.png" alt="Lógica" title="Lógica">
             </a>
-        </p><p>
-            <a class="btn btn-default" href="/fj36-livraria/loja/livro?id=6">
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("livro", "loja", new { id = 6 })">
                 Saiba
                 mais »
             </a>
         </p>
-    </div>*@
-
-
+    </div>
 </div>
 
