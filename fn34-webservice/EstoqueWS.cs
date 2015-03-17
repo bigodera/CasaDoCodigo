@@ -20,9 +20,23 @@ namespace ServicoEstoque
             repositorio.Add("ARQ", new ItemEstoque() { Codigo = "ARQ", Quantidade = 2 });
         }
 
-        public ItemEstoque GetQuantidade(string codigo)
+        public IList<ItemEstoque> GetQuantidade(IList<string> codigos)
         {
-            return repositorio[codigo];
+            IList<ItemEstoque> itens = new List<ItemEstoque>();
+            if (codigos == null)
+            {
+                return itens;
+            }
+
+            foreach (string codigo in codigos)
+            {
+                if(this.repositorio.ContainsKey(codigo))
+                {
+                    itens.Add(repositorio[codigo]);
+                }
+            }
+
+            return itens;
         }
     }
 }
