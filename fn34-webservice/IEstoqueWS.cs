@@ -11,6 +11,6 @@ namespace ServicoEstoque
     public interface IEstoqueWS
     {
         [OperationContract]
-        IList<ItemEstoque> GetQuantidade(IList<string> codigos);
+        IList<ItemEstoque> GetQuantidade(List<string> codigos);
     }
 }

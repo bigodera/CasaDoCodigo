@@ -20,7 +20,7 @@ namespace ServicoEstoque
             repositorio.Add("ARQ", new ItemEstoque() { Codigo = "ARQ", Quantidade = 2 });
         }
 
-        public IList<ItemEstoque> GetQuantidade(IList<string> codigos)
+        public IList<ItemEstoque> GetQuantidade(List<string> codigos)
         {
             IList<ItemEstoque> itens = new List<ItemEstoque>();
             if (codigos == null)
