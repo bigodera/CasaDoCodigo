@@ -1,0 +1,5 @@
+C:\Users\gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\bin\Debug\fn34-webservice.dll
+C:\Users\gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\bin\Debug\fn34-webservice.pdb
+C:\Users\gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\obj\Debug\fn34-webservice.csprojResolveAssemblyReference.cache
+C:\Users\gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\obj\Debug\fn34-webservice.dll
+C:\Users\gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\obj\Debug\fn34-webservice.pdb
