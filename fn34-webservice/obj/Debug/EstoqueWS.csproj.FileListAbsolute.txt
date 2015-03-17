@@ -1,0 +1,5 @@
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\bin\Debug\EstoqueWS.dll
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\bin\Debug\EstoqueWS.pdb
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\obj\Debug\EstoqueWS.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\obj\Debug\EstoqueWS.dll
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\fn34-webservice\obj\Debug\EstoqueWS.pdb

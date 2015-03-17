@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fn34_webservice
+namespace ServicoEstoque
 {
     public class EstoqueWS : IEstoqueWS
     {

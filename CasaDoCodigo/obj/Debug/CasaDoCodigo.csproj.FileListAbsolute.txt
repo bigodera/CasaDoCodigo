@@ -13,6 +13,6 @@ C:\Users\gabriel\Documents\Projects\CasaDoCodigo\CasaDoCodigo\bin\System.Web.Web
 C:\Users\gabriel\Documents\Projects\CasaDoCodigo\CasaDoCodigo\bin\System.Web.Webpages.Razor.xml
 C:\Users\gabriel\Documents\Projects\CasaDoCodigo\CasaDoCodigo\bin\System.Web.Helpers.xml
 C:\Users\gabriel\Documents\Projects\CasaDoCodigo\CasaDoCodigo\bin\System.Web.Mvc.xml
-C:\Users\gabriel\Documents\Projects\CasaDoCodigo\CasaDoCodigo\obj\Debug\CasaDoCodigo.csprojResolveAssemblyReference.cache
 C:\Users\gabriel\Documents\Projects\CasaDoCodigo\CasaDoCodigo\obj\Debug\CasaDoCodigo.dll
 C:\Users\gabriel\Documents\Projects\CasaDoCodigo\CasaDoCodigo\obj\Debug\CasaDoCodigo.pdb
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\CasaDoCodigo\obj\Debug\CasaDoCodigo.csprojResolveAssemblyReference.cache

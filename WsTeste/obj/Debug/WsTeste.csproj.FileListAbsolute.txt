@@ -1,0 +1,4 @@
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsTeste\bin\Debug\WsTeste.dll
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsTeste\bin\Debug\WsTeste.pdb
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsTeste\obj\Debug\WsTeste.dll
+C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsTeste\obj\Debug\WsTeste.pdb
