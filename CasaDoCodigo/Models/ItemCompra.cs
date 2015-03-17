@@ -7,11 +7,7 @@ namespace CasaDoCodigo.Models
 {
     public class ItemCompra
     {
-        List<string> teste = new List<string>();
-        public ItemCompra()
-        {
-            teste.Sort()
-        }
+        
 
     }
 }
