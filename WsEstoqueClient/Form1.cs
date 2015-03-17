@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServicoEstoque;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ServicoEstoque;
 
 namespace WsEstoqueClient
 {
@@ -20,17 +20,17 @@ namespace WsEstoqueClient
 
         private void botaoEstoque_Click(object sender, EventArgs e)
         {
-            EstoqueWSClient client  = new EstoqueWSClient();
+            EstoqueWSClient client = new EstoqueWSClient();
 
             string[] codigos = new string[2];
             codigos[0] = "ARQ";
-            codigos[1] = "TDD"; 
+            codigos[1] = "TDD";
 
             ItemEstoque[] itens = client.GetQuantidade(codigos);
 
             foreach (var item in itens)
             {
-                MessageBox.Show("Item: " + item.Codigo + "Quantidade" + item.Quantidade);   
+                MessageBox.Show("Item: " + item.Codigo + " Quantidade: " + item.Quantidade);
             }
         }
     }
