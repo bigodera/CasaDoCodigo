@@ -7,7 +7,7 @@ using System.ServiceModel;
 
 namespace ServicoEstoque
 {
-    [ServiceContract]
+    [ServiceContract(Namespace="http://caelum.com.br/estoquews/v1")]
     public interface IEstoqueWS
     {
         [OperationContract]
