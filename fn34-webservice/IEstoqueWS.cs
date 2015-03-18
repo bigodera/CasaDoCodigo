@@ -11,6 +11,7 @@ namespace ServicoEstoque
     public interface IEstoqueWS
     {
         [OperationContract]
+        [FaultContract(typeof(AutorizacaoFault))]
         IList<ItemEstoque> GetQuantidade(List<string> codigos);
     }
 }

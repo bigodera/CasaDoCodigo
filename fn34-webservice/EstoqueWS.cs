@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,17 +24,31 @@ namespace ServicoEstoque
         public IList<ItemEstoque> GetQuantidade(List<string> codigos)
         {
             IList<ItemEstoque> itens = new List<ItemEstoque>();
-            if (codigos == null)
+            
+            var opContext = OperationContext.Current;
+            var requestContext = opContext.RequestContext;
+            var headers = requestContext.RequestMessage.Headers;
+            int headerIndex = headers.FindHeader("Token", "");
+            var token = headers.GetHeader<string>(headerIndex);
+            
+            if  (token == "TOKEN123")
             {
-                return itens;
-            }
-
-            foreach (string codigo in codigos)
-            {
-                if(this.repositorio.ContainsKey(codigo))
+                if (codigos == null)
                 {
-                    itens.Add(repositorio[codigo]);
+                    return itens;
                 }
+
+                foreach (string codigo in codigos)
+                {
+                    if(this.repositorio.ContainsKey(codigo))
+                    {
+                        itens.Add(repositorio[codigo]);
+                    }
+                }
+            }
+            else
+            {
+                throw new FaultException<AutorizacaoFault>(new AutorizacaoFault("Usuário X passou token inválido."), "Token inválido!");
             }
 
             return itens;

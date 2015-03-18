@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ServiceModel;
 namespace ServicoEstoque
 {
     using System.Runtime.Serialization;
