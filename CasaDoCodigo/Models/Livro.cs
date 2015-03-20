@@ -35,7 +35,17 @@ namespace CasaDoCodigo.Models
             this.ValorImpresso = ValorImpresso;
         }
 
-        public override string toString()
+        public decimal GetValor(Formato formato)
+        {
+            if (formato.Equals(Formato.EBOOK))
+            {
+                return this.ValorEbook;
+            }
+
+            return this.ValorImpresso;
+        }
+
+        public override string ToString()
         {
             return "Livro [id=" + this.Id + ", codigo=" + this.Codigo + ", titulo=" + this.Titulo + ", tituloCurto="
                     + this.TituloCurto + ", nomeAutor=" + this.NomeAutor + ", imagem=" + this.Imagem + ", valorEbook="

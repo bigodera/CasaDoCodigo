@@ -135,7 +135,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Carrinho.cs" />
+    <Compile Include="Models\Formato.cs" />
     <Compile Include="Models\ItemCompra.cs" />
+    <Compile Include="Models\ItemEstoque.cs" />
+    <Compile Include="Models\Link.cs" />
+    <Compile Include="Models\Livro.cs" />
+    <Compile Include="Models\Pagamento.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Transacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
