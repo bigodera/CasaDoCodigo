@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CasaDoCodigo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace CasaDoCodigo.Controllers
 {
     public class CarrinhoController : Controller
     {
+        private Carrinho carrinho;
+
         // GET: Carrinho
         public ActionResult Index()
         {
@@ -16,6 +19,8 @@ namespace CasaDoCodigo.Controllers
 
         public ActionResult Listar()
         {
+            this.carrinho.VerificarDisponibilidadeDosItensComSoap();
+
             return View();
         }
     }

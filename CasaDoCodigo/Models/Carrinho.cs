@@ -140,17 +140,9 @@ namespace CasaDoCodigo.Models
         }
 
 
-        private void AtualizarQuantidadeDisponivelDoItemCompra(ItemEstoque itemEstoque) 
-        {
-            //TODO: implementar esse método aqui
+        
 
-            //ItemCompra item = Iterables.find(this.itensDeCompra, new Predicate<ItemCompra>() {
-
-            //@Override
-            //public boolean apply(ItemCompra item) {
-            //    return item.temCodigo(itemEstoque.getCodigo());
-            //}
-	    }
+        
 
         private void LimparCarrinho()
         {
@@ -210,6 +202,43 @@ namespace CasaDoCodigo.Models
             }
 
             return codigos;
+        }
+
+        public void VerificarDisponibilidadeDosItensComSoap() 
+        {
+            //TODO CAFUSO: Ver se tem como melhorar esse cara aqui
+            EstoqueWSClient estoqueWS = new EstoqueWSClient();
+            List<string> codigos = this.GetCodigosDosItensImpressos();
+
+            string[] arrayCodigos = new string[10];
+
+            for (int i = 0; i < codigos.Count; i++)
+            {
+                arrayCodigos[i] = codigos[1];
+            }
+
+            ServicoEstoque.ItemEstoque[] itens = estoqueWS.GetQuantidade(arrayCodigos);
+
+            foreach (ServicoEstoque.ItemEstoque item in itens)
+            {
+                AtualizarQuantidadeDisponivelDoItemCompra(item);
+            }
+	    }
+
+        private void AtualizarQuantidadeDisponivelDoItemCompra(ServicoEstoque.ItemEstoque itemEstoque)
+        {
+            //TODO CAFUSO: Ao testar, vamo ver se tatu do bem
+            //
+
+            ItemCompra item = this.ItensDeCompra.Where( i =>  i.TemCodigo(itemEstoque.Codigo  )).First(); //Iterables.find(this.itensDeCompra, new Predicate<ItemCompra>() {
+
+           
+            //@Override
+            //public boolean apply(ItemCompra item) {
+            //    return item.temCodigo(itemEstoque.getCodigo());
+            //}
+
+            item.QuantidadeEstoque = itemEstoque.Quantidade;
         }
 
     }
