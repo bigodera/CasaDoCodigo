@@ -11,12 +11,12 @@ namespace CasaDoCodigo.Models
         private static string STATUS_CONFIRMADO = "CONFIRMADO";
         private static string STATUS_CANCELADO = "CANCELADO";
 
-        public int Id { get; set; }
-        public string Status { get; set; }
-        public decimal Valor { get; set; }
-        public List<Link> Links { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string Status { get; set; }
+        public virtual decimal Valor { get; set; }
+        public virtual List<Link> Links { get; set; }
 
-        public Link GetLinkPeloRel(string rel)
+        public virtual Link GetLinkPeloRel(string rel)
         {
             foreach (Link link in this.Links)
             {
@@ -28,17 +28,17 @@ namespace CasaDoCodigo.Models
             return null;
         }
 
-        public bool EhCriado()
+        public virtual bool EhCriado()
         {
             return STATUS_CRIADO.Equals(this.Status);
         }
 
-        public bool EhConfirmado()
+        public virtual bool EhConfirmado()
         {
             return STATUS_CONFIRMADO.Equals(this.Status);
         }
 
-        public bool EhCancelado()
+        public virtual bool EhCancelado()
         {
             return STATUS_CANCELADO.Equals(this.Status);
         }

@@ -7,12 +7,12 @@ namespace CasaDoCodigo.Models
 {
     public class Pedido
     {
-        public int Id { get; set; }
-        public DateTime Data { get; set; }
-        public ISet<ItemCompra> Itens { get; set; }
-        public Pagamento Pagamento;
+        public virtual int Id { get; set; }
+        public virtual DateTime Data { get; set; }
+        public virtual ISet<ItemCompra> Itens { get; set; }
+        public virtual Pagamento Pagamento { get; set; }
 
-        public string Status
+        public virtual string Status
         {
             get
             {
@@ -20,24 +20,23 @@ namespace CasaDoCodigo.Models
             }
         }
 
-        public string GetFormato()
+        public virtual string GetFormato()
         {
             return this.TemApenasLivrosImpressos() ? "impresso" : "ebook";
         }
 
-        private bool TemApenasLivrosImpressos() 
+        public virtual bool TemApenasLivrosImpressos()
         {
-		
-		    foreach (ItemCompra itemCompra in this.Itens) {
-			    if(!itemCompra.isImpresso()) {
-				    return false;
-			    }
-		    }
-		    
+
+            foreach (ItemCompra itemCompra in this.Itens)
+            {
+                if (!itemCompra.isImpresso())
+                {
+                    return false;
+                }
+            }
+
             return true;
-	    }
-
-
-
+        }
     }
 }

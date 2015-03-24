@@ -35,7 +35,7 @@ namespace CasaDoCodigo.Models
             this.ValorImpresso = ValorImpresso;
         }
 
-        public decimal GetValor(Formato formato)
+        public virtual decimal GetValor(Formato formato)
         {
             if (formato.Equals(Formato.EBOOK))
             {
