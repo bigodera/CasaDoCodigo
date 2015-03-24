@@ -1,4 +1,6 @@
-﻿using CasaDoCodigo.Infra;
+﻿using CasaDoCodigo.DAO;
+using CasaDoCodigo.Infra;
+using CasaDoCodigo.Models;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,14 @@ namespace CasaDoCodigo.Controllers
         // GET: Loja
         public ActionResult Index()
         {
-            return View();
+            IList<Livro> livros = new LivroDAO().Lista();
+            return View(livros);
+        }
+
+        public ActionResult Livro(int id)
+        {
+            Livro livro = new LivroDAO().BuscaPorId(id);
+            return View(livro);
         }
     }
 }

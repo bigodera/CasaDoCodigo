@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model CasaDoCodigo.Models.Livro
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 col-xs-12">
+            <div class="container">
+                @using (Html.BeginForm("AdicionarItem", "Carrinho", FormMethod.Post, new { @class = "container" }))
+                {
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="~/Content/Imagens/medium_@Model.Imagem" 
+                            alt="@Model.Titulo" class="img-rounded"/>
+                        </div>
+                        <div class="col-md-6">
+
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <h1>@Model.Titulo</h1>
+                            <h6>
+                                <input type="radio" name="formatoLivro" value="EBOOK">
+                                <label>E-book $@Model.ValorEbook</label>
+                            </h6>
+                            <h6>
+                                <input type="radio" name="formatoLivro" value="IMPRESSO"
+                                       checked> <label>Impresso $@Model.ValorImpresso</label>
+                                <input class="btn-lg btn-primary text-center"
+                                       style="margin-top: 1em; display: block" type="submit"
+                                       class="icon-basket-alt" alt="Comprar" value="Comprar">
+                            </h6>
+                        </div>
+                    </div>
+                }
+                
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>
+                            <span class="product-author-link">@Model.NomeAutor</span>
+                        </h2>
+
+                        <span>
+                            <p>@Model.Descricao</p>
+                        </span>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        @*TODO: Talvez importar algo aqui, não sei direito*@
+        @*<div class="col-md-3 col-xs-12">
+            <c:import url="/WEB-INF/views/menu-treinamentos.jsp" />
+        </div>*@
+    </div>
+
+    @*TODO: importar footer aqui ou já tá na layout page?*@
+    @*<c:import url="/WEB-INF/views/footer.jsp" />*@
+
+</div>
+

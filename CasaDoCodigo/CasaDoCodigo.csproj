@@ -141,6 +141,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CarrinhoController.cs" />
+    <Compile Include="DAO\LivroDAO.cs" />
     <Compile Include="Controllers\LojaController.cs" />
     <Compile Include="EstoqueWsProxy.cs" />
     <Compile Include="Global.asax.cs">
@@ -168,6 +169,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Loja\Livro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
