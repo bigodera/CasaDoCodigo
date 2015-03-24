@@ -1,5 +1,8 @@
-﻿using System;
+﻿using CasaDoCodigo.Infra;
+using NHibernate;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +14,14 @@ namespace CasaDoCodigo
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            //TODO: tirar esse código daqui, provavelmente em algum método específico de inicialização
+            ISession session = NHibernateHelper.AbreSession();
+            if (ConfigurationManager.AppSettings["InicializaBanco"].ToString() == "S")
+            {
+                NHibernateHelper.PopulaBanco();
+            }
+            
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(

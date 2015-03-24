@@ -14,6 +14,9 @@ namespace CasaDoCodigo.Mapeamentos
             Id(p => p.Id).GeneratedBy.Identity();
             Map(p => p.Data);
             References(p => p.Pagamento, "PagamentoId");
+
+            //TODO: Corrigir mapeamento aqui, não entendi como rola no
+            //hibernate e aqui não. Tem que gerar a tabela
             HasMany(p => p.Itens).Inverse();
         }
     }

@@ -13,7 +13,6 @@ namespace CasaDoCodigo.Controllers
         // GET: Loja
         public ActionResult Index()
         {
-            ISession session = NHibernateHelper.AbreSession();
             return View();
         }
     }
