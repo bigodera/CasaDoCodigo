@@ -19,7 +19,7 @@ namespace CasaDoCodigo.Mapeamentos
             Map(livro => livro.Imagem);
             Map(livro => livro.ValorEbook);
             Map(livro => livro.ValorImpresso);
-            Map(livro => livro.Descricao);
+            Map(livro => livro.Descricao).Length(1000);
         }
     }
 }

@@ -1,9 +1,0 @@
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\bin\Debug\WsEstoqueClient.exe.config
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\bin\Debug\WsEstoqueClient.exe
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\bin\Debug\WsEstoqueClient.pdb
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\obj\Debug\WsEstoqueClient.csprojResolveAssemblyReference.cache
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\obj\Debug\WsEstoqueClient.Form1.resources
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\obj\Debug\WsEstoqueClient.Properties.Resources.resources
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\obj\Debug\WsEstoqueClient.csproj.GenerateResource.Cache
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\obj\Debug\WsEstoqueClient.exe
-C:\Users\Gabriel\Documents\Projects\CasaDoCodigo\WsEstoqueClient\obj\Debug\WsEstoqueClient.pdb
