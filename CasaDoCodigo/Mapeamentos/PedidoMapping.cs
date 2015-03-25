@@ -17,7 +17,7 @@ namespace CasaDoCodigo.Mapeamentos
 
             //TODO: Corrigir mapeamento aqui, não entendi como rola no
             //hibernate e aqui não. Tem que gerar a tabela
-            HasMany(p => p.Itens).Inverse();
+            HasMany(p => p.Itens);
         }
     }
 }

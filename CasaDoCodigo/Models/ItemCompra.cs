@@ -11,7 +11,6 @@ namespace CasaDoCodigo.Models
         public virtual Formato Formato { get; set; }
         public virtual int Quantidade { get; set; }
         public virtual int QuantidadeEstoque { get; set; }
-
         public virtual Livro Livro { get; set; }
 
         public ItemCompra()

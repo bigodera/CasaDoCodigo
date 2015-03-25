@@ -11,6 +11,11 @@ namespace CasaDoCodigo.Controllers
     {
         private Carrinho carrinho;
 
+        public CarrinhoController(Carrinho carrinho)
+        {
+            this.carrinho = carrinho;
+        }
+
         // GET: Carrinho
         public ActionResult Index()
         {
