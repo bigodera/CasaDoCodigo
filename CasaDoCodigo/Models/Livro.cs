@@ -32,7 +32,7 @@ namespace CasaDoCodigo.Models
             this.NomeAutor = nomeAutor;
             this.Imagem = imagem;
             this.ValorEbook = valorEbook;
-            this.ValorImpresso = ValorImpresso;
+            this.ValorImpresso = valorImpresso;
         }
 
         public virtual decimal GetValor(Formato formato)
