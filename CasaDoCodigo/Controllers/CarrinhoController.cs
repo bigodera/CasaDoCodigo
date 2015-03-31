@@ -1,4 +1,5 @@
-﻿using CasaDoCodigo.Models;
+﻿using CasaDoCodigo.DAO;
+using CasaDoCodigo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,13 @@ namespace CasaDoCodigo.Controllers
 {
     public class CarrinhoController : Controller
     {
-        private Carrinho carrinho;
+        private static Carrinho carrinho = new Carrinho();
+        private LivroDAO dao;
 
-        public CarrinhoController(Carrinho carrinho)
+        public CarrinhoController(LivroDAO dao)
         {
-            this.carrinho = carrinho;
+            //this.carrinho = carrinho;
+            this.dao = dao;
         }
 
         // GET: Carrinho
@@ -24,9 +27,17 @@ namespace CasaDoCodigo.Controllers
 
         public ActionResult Listar()
         {
-            this.carrinho.VerificarDisponibilidadeDosItensComSoap();
+            carrinho.VerificarDisponibilidadeDosItensComSoap();
 
-            return View();
+            return View(carrinho);
         }
+
+        public ActionResult AdicionarItem(int id, Formato formato)
+        {
+            Livro livro = dao.BuscaPorId(id);
+            carrinho.AdicionarOuIncremantarQuantidadeDoItem(livro, formato);
+            return RedirectToAction("Listar");
+        }
+
     }
 }

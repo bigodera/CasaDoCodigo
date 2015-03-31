@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-9 col-xs-12">
             <div class="container">
-                @using (Html.BeginForm("AdicionarItem", "Carrinho", FormMethod.Post, new { @class = "container" }))
+                @using (Html.BeginForm("AdicionarItem", "Carrinho", FormMethod.Post, new { @class = "container" } ))
                 {
                     <div class="row">
                         <div class="col-md-2">
@@ -21,12 +21,12 @@
                             <input type="hidden" name="id" value="@Model.Id" />
                             <h1>@Model.Titulo</h1>
                             <h6>
-                                <input type="radio" name="formatoLivro" value="EBOOK">
-                                <label>E-book $@Model.ValorEbook</label>
+                                <input type="radio" name="formato" value="EBOOK">
+                                <label>E-book @Model.ValorEbook</label>
                             </h6>
                             <h6>
-                                <input type="radio" name="formatoLivro" value="IMPRESSO"
-                                       checked> <label>Impresso $@Model.ValorImpresso</label>
+                                <input type="radio" name="formato" value="IMPRESSO">
+                                 <label>Impresso @Model.ValorImpresso</label>
                                 <input class="btn-lg btn-primary text-center"
                                        style="margin-top: 1em; display: block" type="submit"
                                        class="icon-basket-alt" alt="Comprar" value="Comprar">

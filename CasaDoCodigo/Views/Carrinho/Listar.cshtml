@@ -1,27 +1,221 @@
 ﻿@model CasaDoCodigo.Models.Carrinho
 
 @{
-    ViewBag.Title = "Listar";
+    //ViewBag.Title = "Listar";
     Layout="~/Views/Shared/_Layout.cshtml"; 
 }
 
-<h2>Seu carrinho de compras</h2>
+<div class="container">
 
-@if (Model == null)
-{
-    <div class="alert alert-info">
-        Nenhum livro no carrinho de
-        compras.
+    <div class="row">
+        <div class="col-md-9 col-xs-12">
+            <h2>Seu carrinho de compras</h2>
+
+            @*TODO: limpar o código comentado que deixei aqui*@
+
+            @Html.ValidationMessage("messageInfo");
+            @*<c:if test="${not empty messageInfo}">
+                <div class="alert alert-info">${messageInfo}</div>
+            </c:if>*@
+
+            @Html.ValidationMessage("messageWarn");
+            @*<c:if test="${not empty messageWarn}">
+                <div class="alert alert-danger">${messageWarn}</div>
+            </c:if>*@
+
+            @if (Model.ItensDeCompra == null)
+            {
+                <div class="alert alert-info">
+                    Nenhum livro no carrinho de
+                    compras.
+                </div>
+                
+                
+                @Html.Partial("_CompreMais")
+            }
+
+            @*<c:if test="${empty carrinho.itensCompra}">
+                <div class="alert alert-info">
+                    Nenhum livro no carrinho de
+                    compras.
+                </div>
+
+                <c:import url="/WEB-INF/views/compreMais.jsp" />
+
+            </c:if>*@
+
+            @*<c:if test="${not empty carrinho.itensCompra}">*@
+            @if(Model.ItensDeCompra != null)
+            { 
+                <table id="cart-table" class="table table-hover">
+
+                    <thead>
+                        <tr>
+                            <th width="65%" colspan="2">Livro</th>
+                            <th width="10%">Preço</th>
+                            <th width="5%">Qtd</th>
+                            <th width="5%">Estoque</th>
+                            <th width="10%">Total</th>
+                            <th width="5%"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach(var item in Model.ItensDeCompra)
+                        { 
+                        @*<c:foreach items="${carrinho.itensCompra}" var="item">*@
+                            <tr>
+                                <td>
+                                    <img src="<c:url value=" />resources/imagens/small_@item.GetImagem()" />" />
+                                </td>
+                                <td>@item.Livro.Titulo (@item.Formato})</td>
+                                <td class="numeric-cell">@item.GetValorUnico()</td>
+                                <td class="numeric-cell">@item.Quantidade</td>
+                                <td class="numeric-cell">
+                                    @if (item.isImpresso()) { @item.QuantidadeEstoque }
+                                    @*<c:if test="${item.impresso}">${item.quantidadeEstoque}</c:if>*@
+                                </td>
+                                <td class="numeric-cell">@item.GetTotal()</td>
+                                <td>
+                                    @*<a href="${linkCarrinhoRemover}?codigo=${item.codigo}&formato=${item.formato}"
+                                       class="btn btn-default">
+                                        <span class="glyphicon glyphicon-trash"></span> Excluir
+                                    </a>*@
+                                    @Html.ActionLink("Remover", "removerItem", "carrinho", 
+                                                      new { codigo = item.Livro.Codigo, formato = item.Formato }, 
+                                                        new { @class= "btn btn-default glyphicon glyphicon-trash" })
+                                </td>
+                            </tr>
+                        }
+                        @*</c:foreach>*@
+                    </tbody>
+
+                    <tfoot>
+                        @if(Model.IsComLivrosImpressos())
+                        { 
+                        @*<c:if test="${carrinho.comLivrosImpressos}">*@
+                            <tr>
+                                <td></td>
+
+                                <td colspan="6" align="right">
+                                    @using (Html.BeginForm("CalcularCep", "Carrinho", FormMethod.Post))
+                                    {
+                                    @*<form action="${linkCarrinhoCalcularCep}" method="post">*@
+                                        <span class="input-group">
+                                            <span class="input-group-addon">CEP:</span> <input type="text"
+                                                                                               class="form-control" value="@Model.CepDestino"
+                                                                                               name="cepDestino" id="cepDestino" placeholder="Digite o cep">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="submit">
+                                                    <span class="glyphicon glyphicon-usd"></span> Calcular
+                                                    Frete
+                                                </button>
+                                            </span>
+                                        </span>
+                                    }
+                                    @*</form>*@
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td colspan="3" align="right">
+                                    <c:if test="${not empty carrinho.valorFrete}">Frete: ${carrinho.valorFrete}</c:if>
+                                    @if (Model.ValorFrete != 0) 
+                                    {
+                                        @:Frete: @Model.ValorFrete 
+                                    }
+                                </td>
+                            </tr>
+                        }
+
+                        <tr>
+                            <td colspan="4">
+                                @Html.Partial("_CompreMais")
+                                @*<c:import url="/WEB-INF/views/compreMais.jsp" />*@
+                            </td>
+
+                            <td colspan="3" align="right">
+                                <strong>
+                                    Total:
+                                    @*${carrinho.total}*@
+                                    @Model.GetTotal()
+                                </strong>
+                            </td>
+                        </tr>
+
+                        @if(Model.IsPagamentoCriado())
+                        {
+                            
+                        
+                        @*<c:if test="${not carrinho.pagamentoCriado}">*@
+                            <tr id="tr_form_cartao">
+                                <td colspan="2"></td>
+                                <td colspan="5" align="right">
+                                    <div id="div_form_cartao" class="show">
+                                        @using (Html.BeginForm("CriarPagamento", "Carrinho", FormMethod.Post))
+                                        { 
+                                        @*<form action="${linkCarrinhoCriarPagamento}" method="POST"
+                                              role="form">*@
+                                            <p class="lead text-success">Preencha os dados abaixo:</p>
+                                            <div class="form-group">
+                                                <label for="cartao">Número do cartão</label> <input type="text" class="form-control" name="numeroCartao"
+                                                                                                    id="numeroCartao" placeholder="Digite o número do cartão"
+                                                                                                    autocomplete="off">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="nome">Nome do titular</label> <input type="text" class="form-control" name="titularCartao"
+                                                                                                 id="titularCartao" placeholder="Digite o nome do titular"
+                                                                                                 autocomplete="off">
+                                            </div>
+                                            <button type="submit" class="btn btn-success"
+                                                    name="btn_pagamento" id="btn_pagamento">
+                                                <span class="glyphicon glyphicon-credit-card"></span> Pagar
+                                                com PayFast
+                                            </button>
+                                        }
+                                        @*</form>*@
+                                    </div>
+                                </td>
+                            </tr>
+                        @*</c:if>*@
+                        }
+
+                        @if(Model.IsProntoPraSerFinalizado())
+                        { 
+                        @*<c:if test="${carrinho.prontoParaSerFinalizado}">*@
+                            <tr>
+                                <td></td>
+                                <td colspan="6" align="right">
+                                    <div id="divFinalizar">
+                                        @using(Html.BeginForm("Finalizar", "Carrinho", FormMethod.Post))
+                                        { 
+                                        @*<form action="${linkCarrinhoFinalizar}" method="post">*@
+                                            <button type="submit" class="btn btn-primary btn-lg"
+                                                    name="btn_pagamento" id="btn_pagamento">
+                                                <span class="glyphicon glyphicon-check"></span> Finalizar
+                                                pedido
+                                            </button>
+                                        }
+                                        @*</form>*@
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        @*</c:if>*@
+                    </tfoot>
+                </table>
+            @*</c:if>*@
+            }
+        </div>
+
+        @*TODO: ver se não tem que importar nada aqui mesmo*@
+        @*<div class="col-md-3 col-xs-12">
+            <c:import url="/WEB-INF/views/menu-treinamentos.jsp" />
+        </div>*@
     </div>
-}
 
+    @*TODO: ver se não tem que importar nada aqui mesmo*@
+    @*<c:import url="/WEB-INF/views/footer.jsp" />*@
 
-<div class="row">
-    <div class="col-md-12 col-xs-12">
-        <a class="btn btn-info btn-lg" href="/fj36-livraria/loja/index">
-            <span class="glyphicon glyphicon-book"></span> Continue comprando
-        </a>
-    </div>
 </div>
-
 

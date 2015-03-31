@@ -12,6 +12,11 @@ namespace CasaDoCodigo.Models
         public string CepDestino { get; set; }
         public Pagamento Pagamento { get; set; }
 
+        public Carrinho()
+        {
+            this.ItensDeCompra = new SortedSet<ItemCompra>();
+        }
+
         public List<ItemCompra> GetItensCompra()
         {
             return new List<ItemCompra>(this.ItensDeCompra);
@@ -207,15 +212,37 @@ namespace CasaDoCodigo.Models
         public void VerificarDisponibilidadeDosItensComSoap() 
         {
             //TODO CAFUSO: Ver se tem como melhorar esse cara aqui
+            //EstoqueWSClient estoqueWS = new EstoqueWSClient();
+            //List<string> codigos = this.GetCodigosDosItensImpressos();
+
+            //string[] arrayCodigos = new string[10];
+
+            //for (int i = 0; i < codigos.Count; i++)
+            //{
+            //    arrayCodigos[i] = codigos[1];
+            //}
+
+            //ServicoEstoque.ItemEstoque[] itens = estoqueWS.GetQuantidade(arrayCodigos);
+
+            //foreach (ServicoEstoque.ItemEstoque item in itens)
+            //{
+            //    AtualizarQuantidadeDisponivelDoItemCompra(item);
+            //}
+
             EstoqueWSClient estoqueWS = new EstoqueWSClient();
-            List<string> codigos = this.GetCodigosDosItensImpressos();
+            //List<string> codigos = this.GetCodigosDosItensImpressos();
 
-            string[] arrayCodigos = new string[10];
+            string[] arrayCodigos = new string[this.ItensDeCompra.Count];
 
-            for (int i = 0; i < codigos.Count; i++)
+            for(int i = 0; i < this.ItensDeCompra.Count; i++)
             {
-                arrayCodigos[i] = codigos[1];
+                arrayCodigos[i] = (this.ItensDeCompra.ToArray())[i].Livro.Codigo;
             }
+
+            //for (int i = 0; i < codigos.Count; i++)
+            //{
+            //    arrayCodigos[i] = codigos[1];
+            //}
 
             ServicoEstoque.ItemEstoque[] itens = estoqueWS.GetQuantidade(arrayCodigos);
 
