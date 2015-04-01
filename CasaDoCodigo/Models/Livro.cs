@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -13,7 +14,9 @@ namespace CasaDoCodigo.Models
         public virtual string TituloCurto { get; set; }
         public virtual string NomeAutor { get; set; }
         public virtual string Imagem { get; set; }
+        [DisplayFormat(DataFormatString = "{0:0.00}")]
         public virtual decimal ValorEbook { get; set; }
+        [DisplayFormat(DataFormatString = "{0:0.00}")]
         public virtual decimal ValorImpresso { get; set; }
         public virtual string Descricao { get; set; }
 

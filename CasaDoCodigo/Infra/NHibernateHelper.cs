@@ -43,10 +43,10 @@ namespace CasaDoCodigo.Infra
                 "A Web Mobile",
                 "Sérgio Lopes",
                 "Com o crescimento absurdo do uso de smartphones e tablets, A Web quebrou novas fronteiras. Sites enjaulados no Desktop são coisa do passado. "
-                + "A Web é multidispositivo e você precisa suportar mobile, TV, relógio... e até Desktop! <br />Programe a Web moderna, transformada pela mobilidade, "
+                + "A Web é multidispositivo e você precisa suportar mobile, TV, relógio... e até Desktop! Programe a Web moderna, transformada pela mobilidade, "
                 + "touch screens e plataformas diversas. Desvende os mistérios de um bom design responsivo, de uma estratégia mobile-first, das telas de alta resolução, "
                 + "dos componentes HTML5 e das otimizações de performance. Enfrente os desafios e mudanças da Web Mobile e explore seus limites!",
-                "webmobile.png", "29.90", "69.90");
+                "webmobile.png", "29,90", "69,90");
 
             Livro arquitetura = geraLivro(
                     "ARQ",
@@ -54,10 +54,10 @@ namespace CasaDoCodigo.Infra
                     "Arquitetura Java",
                     "Paulo Silveira",
                     "Neste livro, os autores, conhecidos especialistas da área, apresentam muitos tópicos que aparecem com frequência na plataforma Java, "
-                    + "incluindo desde modelagem e design das classes, até detalhes importantes das tecnologias mais utilizadas. <br/> "
+                    + "incluindo desde modelagem e design das classes, até detalhes importantes das tecnologias mais utilizadas."
                     + "Sempre com uma visão técnica e prática capaz de elucidar muitas questões enfrentadas tanto pelo profissional iniciante quanto "
                     + "por aquele que está adquirindo mais experiência na plataforma.",
-                    "arquitetura.jpg", "29.90", "79.90");
+                    "arquitetura.jpg", "29,90", "79,90");
 
             Livro rest = geraLivro(
                     "RES",
@@ -69,7 +69,7 @@ namespace CasaDoCodigo.Infra
                     + "Nesse livro, Alexandre Saudate ensina como implementar APIs REST, que são simples e fáceis de manter, "
                     + "indo desde o básico dos formatos de dados como XML e JSON, passando por uma implementação rústica de um serviço "
                     + "e evoluindo para uso da poderosa especificação Java, o JAX-RS.",
-                    "rest.png", "29.90", "59.90");
+                    "rest.png", "29,90", "59,90");
 
             Livro tdd = geraLivro(
                     "TDD",
@@ -82,7 +82,7 @@ namespace CasaDoCodigo.Infra
                     + "mas poderá aplicar o conceito aprendido em qualquer outra linguagem. TDD faz o desenvolvedor escrever o teste antes mesmo de implementar o código. "
                     + "Essa simples inversão na maneira de se trabalhar, faz com o que o desenvolvedor escreva código mais testado, com menos bugs, "
                     + "e inclusive com mais qualidade. Seja profissional, teste seu software!",
-                    "tdd.png", "29.90", "59.90");
+                    "tdd.png", "29,90", "59,90");
 
             Livro soa = geraLivro(
                     "SOA",
@@ -94,7 +94,7 @@ namespace CasaDoCodigo.Infra
                     + "A arquitetura orientada a serviços (Service Oriented Architecture - SOA) existe justamente para resolver essa situação. "
                     + "Aprenda como integrar sistemas com web services, mensageria assíncrona, orquestração e muito mais de uma maneira prática, "
                     + "focada, onde desde primeiro capítulo você já constrói e se integra a um serviço.",
-                    "soa.png", "29.90", "59.90");
+                    "soa.png", "29,90", "59,90");
 
             Livro logica = geraLivro(
                     "LOG",
@@ -109,7 +109,7 @@ namespace CasaDoCodigo.Infra
                     + "O livro explora os recursos do HTML e Javascript, criando a familiaridade desde o começo dos estudos com a sintaxe da linguagem de programação, "
                     + "instruções, funções específicas e problemas corriqueiros da programação. Além disso, você vai aprender como usar o Canvas do HTML "
                     + "para criar seus desenhos através de programação e impressionar seus amigos.",
-                    "logica.png", "29.90", "59.90");
+                    "logica.png", "29,90", "59,90");
 
             ISession session = factory.OpenSession();
 

@@ -1,6 +1,4 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -19,7 +17,7 @@
         <div class="col-6 col-sm-6 col-lg-4">
             <h4>@livro.Titulo</h4>
             <p>
-                @*<a href="/fj36-livraria/loja/livro?id=1" class="block clearfix">*@
+                
                 <a href="@Url.Action("livro", "loja", new { id = livro.Id })" class="block clearfix">
                     <img src="~/Content/Imagens/medium_@livro.Imagem" alt="@livro.TituloCurto" title="@livro.TituloCurto">
                 </a>

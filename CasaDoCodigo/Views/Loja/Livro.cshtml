@@ -22,31 +22,33 @@
                             <h1>@Model.Titulo</h1>
                             <h6>
                                 <input type="radio" name="formato" value="EBOOK">
-                                <label>E-book @Model.ValorEbook</label>
+                                <label>E-book @Html.DisplayFor(m => m.ValorEbook)  @*@Model.ValorEbook*@</label>
                             </h6>
                             <h6>
-                                <input type="radio" name="formato" value="IMPRESSO">
-                                 <label>Impresso @Model.ValorImpresso</label>
+                                <input type="radio" name="formato" value="IMPRESSO" checked="checked">
+                                 <label>Impresso @Html.DisplayFor(m => m.ValorImpresso)</label>
                                 <input class="btn-lg btn-primary text-center"
                                        style="margin-top: 1em; display: block" type="submit"
                                        class="icon-basket-alt" alt="Comprar" value="Comprar">
                             </h6>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2>
+                                <span class="product-author-link">@Model.NomeAutor</span>
+                            </h2>
+
+                            <span>
+                                <p>@Model.Descricao</p>
+                            </span>
+                        </div>
+                    </div>
                 }
                 
-                <div class="row">
-                    <div class="col-md-8">
-                        <h2>
-                            <span class="product-author-link">@Model.NomeAutor</span>
-                        </h2>
-
-                        <span>
-                            <p>@Model.Descricao</p>
-                        </span>
-                    </div>
-                </div>
-                </form>
+                
+                @*</form>*@
             </div>
         </div>
         @*TODO: Talvez importar algo aqui, não sei direito*@
